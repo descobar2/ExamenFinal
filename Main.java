@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class ConnectionDB {
+public class Main{
     public static void main(String[] args) throws SQLException {
         final String HOST = "localhost:3306/Final";
         final String DB_URL = String.format("jdbc:mysql://%s", HOST);
@@ -15,8 +15,8 @@ public class ConnectionDB {
         try{ 
             String sql = "INSERT INTO Profesor (Nombre, Profesion) VALUES (?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(2, "Allan");
-            ps.setString(3, "Ingeniero");
+            ps.setString(1, "Allan");
+            ps.setString(2, "Ingeniero");
             ps.executeUpdate();
 
         }catch(SQLException e){
